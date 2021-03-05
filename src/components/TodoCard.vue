@@ -45,11 +45,14 @@
 
         methods: {
             addTask(task) {
-                this.task.push({
+                if(task != ""){
+                    this.task.push({
                     description: task,
                     checked: false
                 })
-                this.somme++;
+                this.somme++; 
+                }
+               
             },
 
             check(taskFini) {
