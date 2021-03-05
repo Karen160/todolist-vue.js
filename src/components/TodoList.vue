@@ -8,12 +8,13 @@
         <i class="fas fa-trash"></i>
     </button>
 </article>
+<br>
  <button v-on:click='removeAll(index)'>
-    Tous supprimer <i class="fas fa-trash"></i>
+    Tous supprimer 
 </button>
 
  <button v-on:click='removeTaskFinish(index)'>
-    Tous supprimer tache fini <i class="fas fa-trash"></i>
+    Supprimer toutes les taches finis
 </button>
 </template>
 
@@ -45,6 +46,13 @@
  article{
         display: flex;
         justify-content: space-between;
+        padding: 0 100px;
+    }
+
+    article div{
+        display: flex;
+         align-items: center;
+         font-size: 14px;
     }
 
     p{
@@ -52,17 +60,46 @@
     }
     
     input{
-        border-radius: 45px;
-        height: 45px;
-        width: 55px;
+       appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid grey;
+        outline: 0;
+        margin-right: 20px;
+    }
+
+    input::before{
+        background-color: grey;
+        content: ' ';
+        width: 24px;
+        height: 24px;
+        display: none;
+        border-radius: 50%;
+        margin: 2px 0 0 2px;
+    }
+
+    input:checked::before{
+        display: block;
     }
 
     button{
         background-color: red;
         border-radius: 45px;
-        height: 45px;
-        width: 55px;
+        color: white;
+        font-size: 14px;
         border: none;
+        padding: 10px 20px;
+    }
+
+    article button{
+        background-color: red;
+        border-radius: 45px;
+        height: 40px;
+        width: 40px;
+        border: none;
+        justify-content: center;
+        display: flex;
     }
 
     button:hover{
@@ -70,7 +107,7 @@
     }
 
     i{
-        font-size: 30px;
+        font-size: 20px;
         font-weight: bold;
         color: white;
         padding-bottom: 50px;
@@ -78,7 +115,11 @@
     }
 
     .fini{
-        color: red;
+        text-decoration: line-through;
+    }
+
+    input:focus, button:focus{
+        outline: none;
     }
 
 </style>
