@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        name : "TodoList",
+        name : "todo-list",
         props: ['task'],
         methods: {
             check(index){

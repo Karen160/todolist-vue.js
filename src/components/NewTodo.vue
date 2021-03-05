@@ -11,7 +11,7 @@
 
 <script>
 export default{
-    name: "NewTodo",
+    name: "new-todo",
 
     data(){
         return{

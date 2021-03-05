@@ -15,7 +15,7 @@
     import NewTodo from './NewTodo';
     import TodoList from './TodoList';
     export default {
-        name: "TodoCard",
+        name: "todo-card",
         el: '#date',
         data() {
             return {
@@ -84,7 +84,7 @@
 </script>
 
 <style scoped lang="css">
-    #card {
+    #card { 
         background-color: whitesmoke;
         width: 80%;
         margin: auto;
