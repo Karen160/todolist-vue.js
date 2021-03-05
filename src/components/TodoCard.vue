@@ -3,7 +3,8 @@
         <section id="date">
             <p>{{ date }}</p>
             <span>{{ title }}</span>
-            <p>{{ somme }} tâches</p>
+            <p v-if="somme < 2">{{ somme }} tâche</p>
+            <p v-else>{{ somme }} tâches</p>
         </section>
         <NewTodo @nombre=nb @newTask="addTask"></NewTodo>
         <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll" @supprimeTaskFini="poubelleTaskFini"></TodoList>
