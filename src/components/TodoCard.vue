@@ -6,8 +6,8 @@
             <p v-if="somme < 2">{{ somme }} tâche</p>
             <p v-else>{{ somme }} tâches</p>
         </section>
-        <NewTodo @nombre=nb @newTask="addTask"></NewTodo>
-        <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll"></TodoList>
+        <new-todo @nombre=nb @newTask="addTask"></new-todo>
+        <todo-list :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll"></todo-list>
     </div>
 </template>
 
@@ -15,7 +15,7 @@
     import NewTodo from './NewTodo';
     import TodoList from './TodoList';
     export default {
-        name: "TodoCard",
+        name: "todo-card",
         el: '#date',
         data() {
             return {
