@@ -73,11 +73,12 @@
             },
 
             poubelleChecked() {
-                for(var i = 0; i<this.task.length; i++){
-                    if(this.task[i].checked){
-                        this.task.splice(i, 1)
-                    }
-                }
+                this.task = this.task.filter(task => !task.checked)
+                // for(var i = 0; i<this.task.length; i++){
+                //     if(this.task[i].checked){
+                //         this.task.splice(i, 1)
+                //     }
+                // }
             }
         }
     }
