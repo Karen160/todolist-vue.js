@@ -12,10 +12,6 @@
  <button v-on:click='removeAll(index)'>
     Tous supprimer 
 </button>
-
- <button v-on:click='removeTaskFinish(index)'>
-    Supprimer toutes les taches finis
-</button>
 </template>
 
 <script>
@@ -34,10 +30,6 @@
             removeAll(index){
                 this.$emit('supprimeTous', index)
             },
-
-             removeTaskFinish(index){
-                this.$emit('supprimeTaskFini', index)
-            }
         }
     }
 </script>

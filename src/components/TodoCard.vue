@@ -6,7 +6,7 @@
             <p>{{ somme }} tâches</p>
         </section>
         <NewTodo @nombre=nb @newTask="addTask"></NewTodo>
-        <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll" @supprimeTaskFini="poubelleTaskFini"></TodoList>
+        <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll"></TodoList>
     </div>
 </template>
 
@@ -73,13 +73,6 @@
                 this.task.splice(task)
                 this.somme = 0;
             },
-
-            // poubelleTaskFini(taskFini){
-            //     if (this.task.checked = true){
-            //          this.task.splice(taskFini)
-            //     }
-                
-            // }
         }
     }
 </script>
