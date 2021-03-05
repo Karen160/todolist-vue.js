@@ -38,7 +38,7 @@
  article{
         display: flex;
         justify-content: space-between;
-        padding: 0 100px;
+        padding: 10px 100px;
     }
 
     article div{
