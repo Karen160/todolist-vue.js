@@ -12,6 +12,9 @@
  <button v-on:click='removeAll(index)'>
     Tous supprimer 
 </button>
+ <button v-on:click='removeAllChecked()'>
+    Tous supprimer checked
+</button>
 </template>
 
 <script>
@@ -30,6 +33,10 @@
             removeAll(index){
                 this.$emit('supprimeTous', index)
             },
+
+            removeAllChecked(){
+                this.$emit('supprimeChecked')
+            }
         }
     }
 </script>

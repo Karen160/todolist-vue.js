@@ -3,11 +3,11 @@
         <section id="date">
             <p>{{ date }}</p>
             <span>{{ title }}</span>
-            <p v-if="somme < 2">{{ somme }} tâche</p>
-            <p v-else>{{ somme }} tâches</p>
+            <p v-if="task.length < 2">{{ task.length }} tâche</p>
+            <p v-else>{{ task.length }} tâches</p>
         </section>
         <NewTodo @nombre=nb @newTask="addTask"></NewTodo>
-        <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll"></TodoList>
+        <TodoList :task="task" @finCheck="check" @supprime="poubelle" @supprimeTous="poubelleAll" @supprimeChecked="poubelleChecked"></TodoList>
     </div>
 </template>
 
@@ -20,7 +20,6 @@
         data() {
             return {
                 title: "VueJs Tutorial ToDo List",
-                somme: 0,
                 task: [],
             }
         },
@@ -51,7 +50,6 @@
                     description: task,
                     checked: false
                 })
-                this.somme++; 
                 }
                
             },
@@ -67,13 +65,20 @@
 
             poubelle(task) {
                 this.task.splice(task, 1)
-                this.somme--
             },
 
             poubelleAll(task) {
                 this.task.splice(task)
-                this.somme = 0;
+                
             },
+
+            poubelleChecked() {
+                for(var i = 0; i<this.task.length; i++){
+                    if(this.task[i].checked){
+                        this.task.splice(i, 1)
+                    }
+                }
+            }
         }
     }
 </script>
@@ -84,6 +89,7 @@
         width: 80%;
         margin: auto;
         border-radius: 20px;
+        padding: 0 0 10px 5px;
     }
 
     section:first-child {
