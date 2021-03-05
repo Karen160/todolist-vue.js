@@ -1,6 +1,6 @@
 <template>
     <section>
-        <form ref="taskForm" v-on:submit="submitForm">
+        <form>
             <input v-model="task_title" type="text" placeholder="Nouvelle tâche...">
             <button v-on:click="nombre +=1;newTask()">
                 <span>+</span>
